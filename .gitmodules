@@ -1,0 +1,3 @@
+[submodule "newsletter-tools"]
+	path = newsletter-tools
+	url = https://github.com/astropah/newsletter-tools
