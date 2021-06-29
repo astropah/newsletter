@@ -1,0 +1,2 @@
+pytest
+git+git://github.com/astropah/newsletter_tools@main
