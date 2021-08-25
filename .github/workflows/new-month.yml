@@ -1,0 +1,40 @@
+# This workflow is to be run whenever there is a new issue being created.
+# Essentially, we clear out files that are from the previous 
+
+name: Create new monthly issue
+
+# Controls when the workflow will run
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - name: Clear Editorial entry
+        run: cat /dev/null > editorial/editorial.md
+      # clear the abstracts folder
+      - name: Clear abstracts folder
+        run: rm abstracts/*.yml
+      - name: Clear the InFocus folder
+        run: rm infocus/*
+      - name: Remake the InFocus folder
+        if: always()
+        run: mkdir infocus && touch infocus/.gitkeep
+      - name: Push changes to repo files
+        uses: actions-x/commit@v2
+        if: always()
+        with:
+          name: Github Actions
+          branch: main
+          files: .
+          token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
