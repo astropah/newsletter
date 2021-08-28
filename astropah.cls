@@ -36,6 +36,7 @@
 \RequirePackage{indentfirst}
 \RequirePackage{lipsum}
 \RequirePackage{multirow}
+\usepackage[en-US]{datetime2}
 
 % =======================================================
 % Headers & Footers (part 1)
@@ -66,6 +67,8 @@
 
 \RequirePackage{shadowtext}
 
+% this is used to set how the footer is done
+\DTMlangsetup{showdayofmonth=false}
 
 % =======================================================
 % NORMAL FONT
@@ -103,7 +106,7 @@
     {}%
 }
 
-\rfoot[\fontsize{12}{12} \usefont{OT1}{phv}{m}{n} AstroPAH - \monthyear\ $\bullet$  Issue \issuenum]{\fontsize{12}{12} \usefont{OT1}{phv}{m}{n} AstroPAH - \monthyear\ $\bullet$  Issue \issuenum}
+\rfoot[\fontsize{12}{12} \usefont{OT1}{phv}{m}{n} AstroPAH - \today\ $\bullet$  Issue \issuenum]{\fontsize{12}{12} \usefont{OT1}{phv}{m}{n} AstroPAH - \monthyear\ $\bullet$  Issue \issuenum}
 
 \cfoot[\fontsize{12}{12} \usefont{OT1}{phv}{m}{n} \thepage]{\fontsize{12}{12} \usefont{OT1}{phv}{m}{n} \thepage}
 
