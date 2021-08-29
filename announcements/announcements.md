@@ -25,4 +25,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non eros lacus. P
 
 Phasellus vel nunc consectetur, dignissim augue vitae, venenatis felis. Donec ipsum risus, ultrices sed metus ac, commodo aliquet mi. Curabitur vitae porta metus. Donec sit amet justo nisi. Mauris laoreet, ex nec mollis porta, felis ante maximus dui, consectetur efficitur risus odio eu lacus. Aliquam at malesuada velit. Vivamus maximus magna in urna ultrices porta. Sed a sem consectetur neque sollicitudin tincidunt. Aliquam nec eros viverra neque elementum ultrices nec nec ipsum. Nullam in auctor felis. Maecenas aliquet urna ac sodales lobortis. Mauris pulvinar ullamcorper leo, et molestie quam aliquet sodales. Ut sed lacus vel nisi vehicula tempor rhoncus eu sapien.
 
-Email: big@pharm.com
+Contact email: big@pharm.com

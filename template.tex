@@ -47,22 +47,12 @@
 % Do not edit the commends below
 \vfill
 
-% \usefont {OT1} {phv}{b}{n} 
-% \fontsize{15}{15}
-% \selectfont
-
 \begin{shaded}
-
   \vspace{0.1cm}
-
   \centerline{\large \textcolor{white}{Next issue: \textbf{\nextissue}.}}
-
   \vspace{0.2cm}
-
   \centerline{\large \textcolor{white}{Submission deadline: \textbf{\nextdeadline}.}}
-
   \vspace{0.1cm}
-
 \end{shaded}
 
 \newpage 
@@ -83,9 +73,15 @@
 % =================================================
 
 % Edit the In Focus text direct in the file below
+$if(interview)$
+\begin{interview}{$interview.name$}{$interview.photo$}
+  \markdownInput{infocus/infocus.md}
+\end{interview}
+$else$
 \begin{infocus}
     \markdownInput{infocus/infocus.md}
 \end{infocus}
+$endif$
 
 
 % =================================================
