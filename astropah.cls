@@ -36,7 +36,9 @@
 \RequirePackage{indentfirst}
 \RequirePackage{lipsum}
 \RequirePackage{multirow}
-\usepackage[en-US]{datetime2}
+\RequirePackage[smartEllipses,hybrid]{markdown}
+\RequirePackage[en-US]{datetime2}
+\RequirePackage{sectsty}
 
 % =======================================================
 % Headers & Footers (part 1)
@@ -80,7 +82,7 @@
 
 % =======================================================
 % LIKE US ON FACEBOOK SYMBOL AND LINK
-\newcommand{\ourface}{\centerline{\href{https://www.facebook.com/astropah}{\includegraphics[width=0.4\textwidth]{images/facebook2.png}}}}
+\newcommand{\ourface}{\centerline{\href{https://www.facebook.com/astropah}{\includegraphics[width=0.4\textwidth]{facebook2.png}}}}
 % =======================================================
 
 % paragraph
@@ -91,8 +93,6 @@
 \pretolerance=5000
 \tolerance=2000 
 \emergencystretch=10pt
-
-
 
 % Necessary to change the title for each language if using babel
 
@@ -106,7 +106,7 @@
     {}%
 }
 
-\rfoot[\fontsize{12}{12} \usefont{OT1}{phv}{m}{n} AstroPAH - \today\ $\bullet$  Issue \issuenum]{\fontsize{12}{12} \usefont{OT1}{phv}{m}{n} AstroPAH - \monthyear\ $\bullet$  Issue \issuenum}
+\rfoot[\fontsize{12}{12} \usefont{OT1}{phv}{m}{n} AstroPAH $\bullet$ \today\ $\bullet$  Issue \issuenum]{\fontsize{12}{12} \usefont{OT1}{phv}{m}{n} AstroPAH $\bullet$ \today\ $\bullet$  Issue \issuenum}
 
 \cfoot[\fontsize{12}{12} \usefont{OT1}{phv}{m}{n} \thepage]{\fontsize{12}{12} \usefont{OT1}{phv}{m}{n} \thepage}
 
@@ -139,6 +139,15 @@
 % plop the AstroPAH email whereever
 \newcommand{\astropahemail}[1]{\href{mailto:astropah@strw.leidenuniv.nl}{#1}}
 
+% This removes the section numbering
+\setcounter{secnumdepth}{0}
+% this forces the TOC to not include subsections
+\setcounter{tocdepth}{1}
+
+\allsectionsfont{\usefont {OT1} {phv}{b}{n}}
+\sectionfont{\usefont {OT1} {phv}{b}{n} \centering \fontsize{30}{34}}
+\subsectionfont{\usefont {OT1} {phv}{b}{n} \centering \fontsize{14}{15}}
+
 % =======================================================
 % Section declarations
 % =======================================================
@@ -149,9 +158,26 @@
 % This defines the overraching InFocus environment
 \newenvironment{infocus}{
   \newpage
-  \headergraphic{images/Header_InFocus.png}
+  \headergraphic{Header_InFocus.png}
   \section*{~}
   \addcontentsline{toc}{section}{In Focus}
+}{}
+
+% For announcements
+\newenvironment{announcements}{
+  \newpage
+  \headergraphic{Header_Announcements.png}
+  \section*{~}
+  \addcontentsline{toc}{section}{Announcements}
+  \centering
+}{}
+
+% For meetings
+\newenvironment{meetings}{
+  \newpage
+  \headergraphic{Header_Meetings.png}
+  \section*{~}
+  \addcontentsline{toc}{section}{Meetings}
 }{}
 
 % This defines an environment for interviews
@@ -192,7 +218,7 @@
 \newenvironment{editorial}[1]{
     \newpage
     % Do not edit the following commands
-    \headergraphic{images/Header_Editorial.png}
+    \headergraphic{Header_Editorial.png}
     \section*{~}
     \addcontentsline{toc}{section}{Editorial}
     % revert back to normal stuffs
@@ -214,7 +240,7 @@
 \newenvironment{abstracts}{
     \newpage
     % Do not edit the following commands
-    \headergraphic{images/Header_Abstracts.png}
+    \headergraphic{Header_Abstracts.png}
     \section*{~}
     \addcontentsline{toc}{section}{Recent Papers }
     % revert back to normal stuffs

@@ -1,1 +1,1 @@
-Some test editorial words; Lorem ipsum and all that
+Here's an editorial.

@@ -8,7 +8,7 @@
 \newcommand{\nextdeadline}{$next_deadline$}
 
 % Picture of the month information
-\newcommand{\coverfile}{cover.png}
+\newcommand{\coverfile}{cover/cover.png}
 \newcommand{\covertitle}{$cover_text$}
 %Comment from Ella: I don't know how to change the size of the font for it to fit... or maybe we need to make it two lines? 
 % --> The line below. :) Change the number, which is the font size. The following lines, define the (x,y) position.
@@ -22,7 +22,7 @@
 
 \begin{document}
 
-
+\selectlanguage{english}
 
 % =================================================
 %  Cover
@@ -47,19 +47,19 @@
 % Do not edit the commends below
 \vfill
 
-\usefont {OT1} {phv}{b}{n} 
-\fontsize{15}{15}
-\selectfont
+% \usefont {OT1} {phv}{b}{n} 
+% \fontsize{15}{15}
+% \selectfont
 
 \begin{shaded}
 
   \vspace{0.1cm}
 
-  \centerline{\textcolor{white}{Next issue: \textbf{\nextissue}.}}
+  \centerline{\large \textcolor{white}{Next issue: \textbf{\nextissue}.}}
 
   \vspace{0.2cm}
 
-  \centerline{\textcolor{white}{Submission deadline: \textbf{\nextdeadline}.}}
+  \centerline{\large \textcolor{white}{Submission deadline: \textbf{\nextdeadline}.}}
 
   \vspace{0.1cm}
 
@@ -75,7 +75,7 @@
 % =================================================
 
 % The following file does not need editing
-% \input{astropah_infopage.tex}
+\input{info/info.tex}
 
 
 % =================================================
@@ -104,7 +104,11 @@
 % =================================================
 
 % Edit the meeting ads text direct in the file below
-%\input{astropah_meetings.tex}
+$if(meetings)$
+\begin{meetings}
+  \markdownInput{meetings/meetings.md}
+\end{meetings}
+$endif$
 
 
 % =================================================
@@ -112,7 +116,11 @@
 % =================================================
 
 % Edit the announcements text direct in the file below
-% \input{astropah_announcements.tex}
+$if(announcements)$
+\begin{announcements}
+  \markdownInput{announcements/announcements.md}
+\end{announcements}
+$endif$
 
 
 % =================================================
