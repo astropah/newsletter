@@ -19,22 +19,18 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Clear Editorial entry
-        run: cat /dev/null > editorial/editorial.md
-      # clear the abstracts folder
-      - name: Clear abstracts folder
-        run: rm abstracts/*.yml
-      - name: Clear the InFocus folder
-        run: rm infocus/*
-      - name: Remake the InFocus folder
-        if: always()
-        run: mkdir infocus && touch infocus/.gitkeep
-      - name: Push changes to repo files
-        uses: actions-x/commit@v2
-        if: always()
+      - name: Merge template onto main
+        uses: devmasx/merge-branch@v1.3.1
         with:
-          name: Github Actions
-          branch: main
-          files: .
-          token: ${{ secrets.GITHUB_TOKEN }}
-          force: true
+          target_branch: main
+          from_branch: template
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+#       - name: Push changes to repo files
+#         uses: actions-x/commit@v2
+#         if: always()
+#         with:
+#           name: Github Actions
+#           branch: main
+#           files: .
+#           token: ${{ secrets.GITHUB_TOKEN }}
+#           force: true
