@@ -39,6 +39,7 @@
 \RequirePackage[smartEllipses,hybrid]{markdown}
 \RequirePackage[en-US]{datetime2}
 \RequirePackage{sectsty}
+\RequirePackage{ragged2e}
 
 % =======================================================
 % Headers & Footers (part 1)
@@ -161,6 +162,8 @@
   \headergraphic{Header_InFocus.png}
   \section*{~}
   \addcontentsline{toc}{section}{In Focus}
+  \normalsize
+  \justifying
 }{}
 
 % For announcements
@@ -169,7 +172,8 @@
   \headergraphic{Header_Announcements.png}
   \section*{~}
   \addcontentsline{toc}{section}{Announcements}
-  \centering
+  \Centering
+  \normalsize
 }{}
 
 % For meetings
@@ -178,19 +182,26 @@
   \headergraphic{Header_Meetings.png}
   \section*{~}
   \addcontentsline{toc}{section}{Meetings}
+  \normalsize
+  \Centering
 }{}
 
 % This defines an environment for interviews
 \newenvironment{interview}[2]{
+    \newpage
+    \headergraphic{Header_InFocus.png}
+    \section*{~}
+    \addcontentsline{toc}{section}{In Focus}
     \begin{tabular}{l c}
       ~ & \multirow{2}{*}{\includegraphics[width=4cm,height=4cm,keepaspectratio]{#2}} \\
       {\infocustitlesmall \noindent \purple{Interview with}} & \\
       ~ & \\
       {\infocustitle \noindent \purple{#1}} & \\
     \end{tabular}
-    \vspace{1.4cm}
-    % revert back to normal stuffs
+    \vspace{3cm}
     \normalsize
+    \justifying
+    \\ \\
 }{}
 
 % This defines an interview question
@@ -215,16 +226,16 @@
 % EDITORIAL section declarations
 
 % This defines an environment for editorials
-\newenvironment{editorial}[1]{
+\newenvironment{editorial}{
     \newpage
     % Do not edit the following commands
     \headergraphic{Header_Editorial.png}
     \section*{~}
     \addcontentsline{toc}{section}{Editorial}
-    % revert back to normal stuffs
+  
     \normalsize
-
     {\Large{\textbf{Dear colleagues,}}} \\\\
+    \justifying
 }{
   \editorsignature
 }
