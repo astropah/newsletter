@@ -1,5 +1,0 @@
-
-## Editorial
-
-{{ editorial }}
-
