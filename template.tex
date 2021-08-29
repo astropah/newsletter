@@ -1,0 +1,167 @@
+\documentclass{astropah}
+
+\graphicspath{{common}}
+
+% Information that need to be updated in every AstroPAH volume
+\newcommand{\issuenum}{$issue_num$}
+\newcommand{\nextissue}{$next_issue$}
+\newcommand{\nextdeadline}{$next_deadline$}
+
+% Picture of the month information
+\newcommand{\coverfile}{cover/cover.png}
+\newcommand{\covertitle}{$cover_text$}
+%Comment from Ella: I don't know how to change the size of the font for it to fit... or maybe we need to make it two lines? 
+% --> The line below. :) Change the number, which is the font size. The following lines, define the (x,y) position.
+% --> I just include covertitleB for a 2nd line
+\newcommand{\covertitlefontsize}{36}
+\newcommand{\covertitlehposition}{0.0cm}
+\newcommand{\covertitlevposition}{16.0cm}
+\newcommand{\covertitleshadowcolor}{gray}
+\newcommand{\potmcaption}{$potmcaption$}
+\newcommand{\potmcredits}{\href{$potmcredits.url$}{$potmcredits.text$}}
+
+\begin{document}
+
+\selectlanguage{english}
+
+% =================================================
+%  Cover
+% =================================================
+
+% The following file does not need editing
+\input{cover/cover.tex}
+
+% =================================================
+%  EDITORIAL
+% =================================================
+
+% Edit the editorial text direct in the file below
+\begin{editorial}
+  \markdownInput{editorial/editorial.md}
+\end{editorial}
+
+% =================================================
+%   Box with the Next Issue Info
+% =================================================
+
+% Do not edit the commends below
+\vfill
+
+\begin{shaded}
+  \vspace{0.1cm}
+  \centerline{\large \textcolor{white}{Next issue: \textbf{\nextissue}.}}
+  \vspace{0.2cm}
+  \centerline{\large \textcolor{white}{Submission deadline: \textbf{\nextdeadline}.}}
+  \vspace{0.1cm}
+\end{shaded}
+
+\newpage 
+% =================================================
+
+
+
+% =================================================
+%  Info Page (Editorial Board, TOC, etc..)
+% =================================================
+
+% The following file does not need editing
+\input{info/info.tex}
+
+
+% =================================================
+%  In Focus
+% =================================================
+
+% Edit the In Focus text direct in the file below
+$if(interview)$
+\begin{interview}{$interview.name$}{$interview.photo$}
+  \markdownInput{infocus/infocus.md}
+\end{interview}
+$else$
+\begin{infocus}
+    \markdownInput{infocus/infocus.md}
+\end{infocus}
+$endif$
+
+
+% =================================================
+%  Abstracts
+% =================================================
+
+% Edit the abstracts text direct in the file below
+% \begin{abstracts}
+%     \input{astropah_abstracts.tex}
+% \end{abstracts}
+
+
+
+% =================================================
+%  Meetings
+% =================================================
+
+% Edit the meeting ads text direct in the file below
+$if(meetings)$
+\begin{meetings}
+  \markdownInput{meetings/meetings.md}
+\end{meetings}
+$endif$
+
+
+% =================================================
+%  Announcements
+% =================================================
+
+% Edit the announcements text direct in the file below
+$if(announcements)$
+\begin{announcements}
+  \markdownInput{announcements/announcements.md}
+\end{announcements}
+$endif$
+
+
+% =================================================
+%  Box at the end
+% =================================================
+
+% Do not edit the commands bellow
+\textcolor{white}{.}
+
+\vfill
+
+\begin{shaded}
+
+%==================
+\usefont {OT1} {phv}{m}{n} 
+\fontsize{15}{16}
+\selectfont
+%==================
+
+\centerline{\textbf{\textcolor{white}{AstroPAH Newsletter}}}
+
+\begin{multicols}{2}
+
+%==================
+\normalsize
+%==================
+
+\noindent \href{http://astropah-news.strw.leidenuniv.nl}{\textcolor{white}{http://astropah-news.strw.leidenuniv.nl}}
+
+\noindent \href{mailto:astropah@strw.leidenuniv.nl}{\textcolor{white}{astropah@strw.leidenuniv.nl}}
+
+\columnbreak
+
+\flushright \textcolor{white}{Next issue: \nextissue}
+
+\textcolor{white}{Submission deadline: \nextdeadline}
+
+\end{multicols}
+
+
+\end{shaded}
+
+
+% =================================================
+\end{document}       % THE END
+% =================================================
+
+% Template by Isabel Aleman (2020)
