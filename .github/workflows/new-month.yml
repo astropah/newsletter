@@ -20,11 +20,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: Merge template onto main
-        uses: devmasx/merge-branch@v1.3.1
+        uses: tukasz/direct-merge-action@master
         with:
-          target_branch: main
-          from_branch: template
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          source-branch: template
+          target-branch: main
 #       - name: Push changes to repo files
 #         uses: actions-x/commit@v2
 #         if: always()
