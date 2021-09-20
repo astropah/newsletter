@@ -130,3 +130,9 @@ dmypy.json
 .vscode/
 
 _markdown_issue/
+
+.aux
+.out
+.toc
+.fdb_latexmk
+.fls
